@@ -14,6 +14,7 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/Connect" element={<Connect />} />
           <Route path="/Research" element={<Research />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
     </>
