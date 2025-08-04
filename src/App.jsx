@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import Home from "./pages/Home.jsx"
 import About from "./pages/About.jsx"
 import Connect from "./pages/Connect.jsx"
