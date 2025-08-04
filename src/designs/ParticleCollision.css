@@ -1,0 +1,235 @@
+:root {
+  --glow-color: #00ffff;
+  --target-color: #ff6b00;
+  --proton-color: #ffdd00;
+  --electron-color: #00aaff;
+  --exotic-color: #ff00ff;
+  --detector-radius: 350px; /* Increased for better visual scale */
+}
+
+.particle-collision-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.beam-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--glow-color), transparent);
+  box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color);
+  transform: translateY(-50%);
+  filter: blur(1px);
+}
+
+.particle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 15px currentColor;
+}
+
+.beam-particle {
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, white, var(--glow-color));
+  color: var(--glow-color);
+  transform: translateY(-50%);
+}
+
+.target-particle {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle, white, var(--target-color));
+  box-shadow: 0 0 20px var(--target-color);
+  border-radius: 50%;
+}
+
+.scattered-particle {
+  width: 5px; /* Made particles slightly larger */
+  height: 5px;
+  background: white;
+  will-change: transform, opacity;
+}
+
+/* --- CHANGE 1: Removed the old ::after pseudo-element trail --- */
+/* The .scattered-particle::after block has been deleted */
+
+.scattered-particle.proton { color: var(--proton-color); }
+.scattered-particle.electron { color: var(--electron-color); width: 4px; height: 4px; }
+.scattered-particle.exotic { color: var(--exotic-color); }
+
+
+/* --- CHANGE 2: Added styles for the new trail segments --- */
+.trail-segment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  will-change: opacity;
+  pointer-events: none;
+}
+
+/* Assign background color and glow based on particle type */
+.trail-segment.proton {
+  background-color: var(--proton-color);
+  box-shadow: 0 0 8px var(--proton-color);
+}
+.trail-segment.electron {
+  background-color: var(--electron-color);
+  box-shadow: 0 0 8px var(--electron-color);
+}
+.trail-segment.exotic {
+  background-color: var(--exotic-color);
+  box-shadow: 0 0 8px var(--exotic-color);
+}
+
+
+/* Detector Ring and Segments */
+.detector {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.detector-ring {
+    width: calc(var(--detector-radius) * 2);
+    height: calc(var(--detector-radius) * 2);
+    border: 2px solid rgba(0, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: rotate 30s linear infinite;
+}
+
+.detector-segment {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 4px;
+    background: rgba(0, 255, 255, 0.3);
+    transform-origin: center left;
+    transition: background-color 0.1s, box-shadow 0.1s;
+}
+
+.detector-segment.active {
+    background: #ffff00;
+    box-shadow: 0 0 10px #ffff00;
+}
+
+/* Collision Effects Container */
+.collision-effects {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+
+.collision-flash, .blast-wave, .shock-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.particle-scene.collision-event .collision-flash {
+  animation: collisionFlash 0.5s ease-out forwards;
+}
+.particle-scene.collision-event .blast-wave {
+  animation: blastWave 0.7s ease-out 0.05s forwards;
+}
+.particle-scene.collision-event .shock-wave {
+  animation: shockWave 1s ease-out 0.1s forwards;
+}
+
+/* Heads-Up Display */
+.particle-hud {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #00ffff;
+  font-family: 'Orbitron', 'Courier New', monospace;
+  text-shadow: 0 0 5px var(--glow-color);
+  background: rgba(0, 20, 30, 0.5);
+  padding: 15px;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(3px);
+  border-radius: 5px;
+}
+.particle-hud div { margin-bottom: 8px; }
+.particle-hud span { color: white; font-weight: bold; }
+
+.energy-bar {
+  width: 200px;
+  height: 12px;
+  border: 1px solid var(--glow-color);
+  border-radius: 5px;
+  margin: 5px 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.energy-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00ffff, #0080ff);
+  border-radius: 4px;
+  transition: width 0.2s ease-out;
+  box-shadow: 0 0 10px inset #9cffff;
+}
+
+
+/* Keyframe Animations */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes screen-shake {
+  0%, 100% { transform: translate(0, 0); }
+  20%, 80% { transform: translate(-2px, 1px); }
+  40%, 60% { transform: translate(2px, -1px); }
+}
+.screen-shake {
+    animation: screen-shake 0.3s linear;
+}
+
+@keyframes collisionFlash {
+  0% { transform: scale(0); opacity: 1; background: radial-gradient(circle, white 20%, var(--glow-color) 60%, transparent 100%); }
+  90% { transform: scale(1.5); opacity: 1; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+@keyframes blastWave {
+    0% { transform: scale(0.5); opacity: 0.8; background: radial-gradient(circle, transparent 30%, var(--target-color) 70%, transparent 100%); }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes shockWave {
+  0% { transform: scale(0); opacity: 1; width: 100px; height: 100px; border: 4px solid white; }
+  100% { transform: scale(5); opacity: 0; width: 100px; height: 100px; border: 1px solid rgba(255,255,255,0.5); }
+}
