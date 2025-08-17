@@ -6,14 +6,14 @@ import "../designs/About.css"
 
 function About() {
     const imagesUrls = [
-        "./assets/group1.jpg",
-        "./assets/group2.jpeg",
-        "./assets/group3.jpeg",
-        "./assets/group4.jpeg",
-        "./assets/group6.jpg",
-        "./assets/group7.jpg",
-        "./assets/group8.jpeg",
-        "./assets/group9.jpeg"
+        ".public/assets/group1.jpg",
+        ".public/assets/group2.jpeg",
+        ".public/assets/group3.jpeg",
+        ".public/assets/group4.jpeg",
+        ".public/assets/group6.jpg",
+        ".public/assets/group7.jpg",
+        ".public/assets/group8.jpeg",
+        ".public/assets/group9.jpeg"
     ]
 
     const skills = [
