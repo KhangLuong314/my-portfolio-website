@@ -101,7 +101,7 @@ function Connect() {
     };
 
     const submitToBackend = async (data) => {
-        const response = await fetch(`${API}/Contact`, {
+        const response = await fetch(`${API_URL}/Contact`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -167,256 +167,253 @@ function Connect() {
     ];
 
     return (
-        <div className="connect-page">
-            {/* Header */}
-            <Navbar />
+        <>
+            <main>
 
-            {/* Main Content */}
-            <main className="connect-main">
-                <div className="container">
-                    {/* Page Title */}
-                    <section className="connect-hero">
-                        <h1 className="connect-title">Let's Connect</h1>
-                        <p className="connect-subtitle">
-                            Have a question, collaboration idea, or just want to chat about physics? 
-                            I'd love to hear from you!
-                        </p>
-                    </section>
+                <Navbar />
+                {/* Page Title */}
+                <section className="connect-hero">
+                    <h1 className="connect-title">Let's Connect</h1>
+                    <p className="connect-subtitle">
+                        Have a question, collaboration idea, or just want to chat about physics? 
+                        I'd love to hear from you!
+                    </p>
+                </section>
 
-                    <div className="connect-content">
-                        {/* Contact Form */}
-                        <section className="contact-form-section">
-                            <h2 className="section-title">Send Me a Message</h2>
-                            
-                            {/* Status Messages */}
-                            {submitStatus === 'success' && (
-                                <div className="status-message success">
-                                    <div className="status-icon">✓</div>
-                                    <div>
-                                        <h3>Message Sent Successfully!</h3>
-                                        <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
-                                    </div>
+                <section className="connect-content">
+                    {/* Contact Form */}
+                    <div className="contact-form-section">
+                        <h2 className="section-title">Send Me a Message</h2>
+                        
+                        {/* Status Messages */}
+                        {submitStatus === 'success' && (
+                            <div className="status-message success">
+                                <div className="status-icon">✓</div>
+                                <div>
+                                    <h3>Message Sent Successfully!</h3>
+                                    <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
                                 </div>
-                            )}
+                            </div>
+                        )}
 
-                            {submitStatus === 'error' && (
-                                <div className="status-message error">
-                                    <div className="status-icon">✗</div>
-                                    <div>
-                                        <h3>Something went wrong</h3>
-                                        <p>Please try again or contact me directly via email.</p>
-                                    </div>
+                        {submitStatus === 'error' && (
+                            <div className="status-message error">
+                                <div className="status-icon">✗</div>
+                                <div>
+                                    <h3>Something went wrong</h3>
+                                    <p>Please try again or contact me directly via email.</p>
                                 </div>
-                            )}
+                            </div>
+                        )}
 
-                            <form className="contact-form" onSubmit={handleSubmit}>
-                                <div className="form-row">
-                                    <div className="form-group">
-                                        <label htmlFor="name" className="form-label">
-                                            <User size={18} />
-                                            Full Name *
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            value={formData.name}
-                                            onChange={handleInputChange}
-                                            className={`form-input ${errors.name ? 'error' : ''}`}
-                                            placeholder="Enter your full name"
-                                            disabled={isSubmitting}
-                                        />
-                                        {errors.name && <span className="error-message">{errors.name}</span>}
-                                    </div>
-
-                                    <div className="form-group">
-                                        <label htmlFor="email" className="form-label">
-                                            <Mail size={18} />
-                                            Email Address *
-                                        </label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleInputChange}
-                                            className={`form-input ${errors.email ? 'error' : ''}`}
-                                            placeholder="Enter your email address"
-                                            disabled={isSubmitting}
-                                        />
-                                        {errors.email && <span className="error-message">{errors.email}</span>}
-                                    </div>
-                                </div>
-
+                        <form className="contact-form" onSubmit={handleSubmit}>
+                            <div className="form-row">
                                 <div className="form-group">
-                                    <label htmlFor="subject" className="form-label">
-                                        <MessageSquare size={18} />
-                                        Subject *
+                                    <label htmlFor="name" className="form-label">
+                                        <User size={18} />
+                                        Full Name *
                                     </label>
                                     <input
                                         type="text"
-                                        id="subject"
-                                        name="subject"
-                                        value={formData.subject}
+                                        id="name"
+                                        name="name"
+                                        value={formData.name}
                                         onChange={handleInputChange}
-                                        className={`form-input ${errors.subject ? 'error' : ''}`}
-                                        placeholder="What would you like to discuss?"
+                                        className={`form-input ${errors.name ? 'error' : ''}`}
+                                        placeholder="Enter your full name"
                                         disabled={isSubmitting}
                                     />
-                                    {errors.subject && <span className="error-message">{errors.subject}</span>}
-                                </div>
-
-                                <div className="form-row">
-                                    <div className="form-group">
-                                        <label htmlFor="preferredContact" className="form-label">
-                                            <Phone size={18} />
-                                            Preferred Contact Method
-                                        </label>
-                                        <select
-                                            id="preferredContact"
-                                            name="preferredContact"
-                                            value={formData.preferredContact}
-                                            onChange={handleInputChange}
-                                            className="form-input"
-                                            disabled={isSubmitting}
-                                        >
-                                            <option value="email">Email</option>
-                                            <option value="phone">Phone</option>
-                                            <option value="linkedin">LinkedIn</option>
-                                        </select>
-                                    </div>
-
-                                    <div className="form-group">
-                                        <label htmlFor="urgency" className="form-label">
-                                            <Calendar size={18} />
-                                            Priority Level
-                                        </label>
-                                        <select
-                                            id="urgency"
-                                            name="urgency"
-                                            value={formData.urgency}
-                                            onChange={handleInputChange}
-                                            className="form-input"
-                                            disabled={isSubmitting}
-                                        >
-                                            <option value="low">Low - General inquiry</option>
-                                            <option value="normal">Normal - Regular response</option>
-                                            <option value="high">High - Urgent matter</option>
-                                        </select>
-                                    </div>
+                                    {errors.name && <span className="error-message">{errors.name}</span>}
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="message" className="form-label">
-                                        <MessageSquare size={18} />
-                                        Message *
+                                    <label htmlFor="email" className="form-label">
+                                        <Mail size={18} />
+                                        Email Address *
                                     </label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        value={formData.message}
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        value={formData.email}
                                         onChange={handleInputChange}
-                                        className={`form-textarea ${errors.message ? 'error' : ''}`}
-                                        placeholder="Tell me about your project, question, or how I can help you..."
-                                        rows="6"
+                                        className={`form-input ${errors.email ? 'error' : ''}`}
+                                        placeholder="Enter your email address"
                                         disabled={isSubmitting}
                                     />
-                                    {errors.message && <span className="error-message">{errors.message}</span>}
-                                    <div className="character-count">
-                                        {formData.message.length} characters
-                                    </div>
+                                    {errors.email && <span className="error-message">{errors.email}</span>}
+                                </div>
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="subject" className="form-label">
+                                    <MessageSquare size={18} />
+                                    Subject *
+                                </label>
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleInputChange}
+                                    className={`form-input ${errors.subject ? 'error' : ''}`}
+                                    placeholder="What would you like to discuss?"
+                                    disabled={isSubmitting}
+                                />
+                                {errors.subject && <span className="error-message">{errors.subject}</span>}
+                            </div>
+
+                            <div className="form-row">
+                                <div className="form-group">
+                                    <label htmlFor="preferredContact" className="form-label">
+                                        <Phone size={18} />
+                                        Preferred Contact Method
+                                    </label>
+                                    <select
+                                        id="preferredContact"
+                                        name="preferredContact"
+                                        value={formData.preferredContact}
+                                        onChange={handleInputChange}
+                                        className="form-input"
+                                        disabled={isSubmitting}
+                                    >
+                                        <option value="email">Email</option>
+                                        <option value="phone">Phone</option>
+                                        <option value="linkedin">LinkedIn</option>
+                                    </select>
                                 </div>
 
-                                <button
-                                    type="submit"
-                                    className={`submit-button ${isSubmitting ? 'submitting' : ''}`}
-                                    disabled={isSubmitting}
-                                >
-                                    {isSubmitting ? (
-                                        <>
-                                            <div className="spinner"></div>
-                                            Sending...
-                                        </>
-                                    ) : (
-                                        <>
-                                            <Send size={18} />
-                                            Send Message
-                                        </>
-                                    )}
-                                </button>
-                            </form>
-                        </section>
+                                <div className="form-group">
+                                    <label htmlFor="urgency" className="form-label">
+                                        <Calendar size={18} />
+                                        Priority Level
+                                    </label>
+                                    <select
+                                        id="urgency"
+                                        name="urgency"
+                                        value={formData.urgency}
+                                        onChange={handleInputChange}
+                                        className="form-input"
+                                        disabled={isSubmitting}
+                                    >
+                                        <option value="low">Low - General inquiry</option>
+                                        <option value="normal">Normal - Regular response</option>
+                                        <option value="high">High - Urgent matter</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                        {/* Contact Information */}
-                        <section className="contact-info-section">
-                            <h2 className="section-title">Get in Touch</h2>
-                            
-                            <div className="contact-methods">
-                                {contactInfo.map((contact, index) => (
+                            <div className="form-group">
+                                <label htmlFor="message" className="form-label">
+                                    <MessageSquare size={18} />
+                                    Message *
+                                </label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleInputChange}
+                                    className={`form-textarea ${errors.message ? 'error' : ''}`}
+                                    placeholder="Tell me about your project, question, or how I can help you..."
+                                    rows="6"
+                                    disabled={isSubmitting}
+                                />
+                                {errors.message && <span className="error-message">{errors.message}</span>}
+                                <div className="character-count">
+                                    {formData.message.length} characters
+                                </div>
+                            </div>
+
+                            <button
+                                type="submit"
+                                className={`submit-button ${isSubmitting ? 'submitting' : ''}`}
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? (
+                                    <>
+                                        <div className="spinner"></div>
+                                        Sending...
+                                    </>
+                                ) : (
+                                    <>
+                                        <Send size={18} />
+                                        Send Message
+                                    </>
+                                )}
+                            </button>
+                        </form>
+                    </div>
+
+                    {/* Contact Information */}
+                    <div className="contact-info-section">
+                        <h2 className="section-title">Get in Touch</h2>
+                        
+                        <div className="contact-methods">
+                            {contactInfo.map((contact, index) => (
+                                <a
+                                    key={index}
+                                    href={contact.link}
+                                    className="contact-method"
+                                    target={contact.link.startsWith('http') ? '_blank' : '_self'}
+                                    rel={contact.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                                >
+                                    {contact.icon}
+                                    <div className="contact-details">
+                                        <h3>{contact.title}</h3>
+                                        <p>{contact.value}</p>
+                                    </div>
+                                    <ExternalLink size={16} className="external-link-icon" />
+                                </a>
+                            ))}
+                        </div>
+
+                        <div className="social-section">
+                            <h3 className="social-title">Follow Me</h3>
+                            <div className="social-links">
+                                {socialLinks.map((social, index) => (
                                     <a
                                         key={index}
-                                        href={contact.link}
-                                        className="contact-method"
-                                        target={contact.link.startsWith('http') ? '_blank' : '_self'}
-                                        rel={contact.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                                        href={social.url}
+                                        className="social-link"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        title={social.name}
+                                        style={{ '--social-color': social.color }}
                                     >
-                                        {contact.icon}
-                                        <div className="contact-details">
-                                            <h3>{contact.title}</h3>
-                                            <p>{contact.value}</p>
-                                        </div>
-                                        <ExternalLink size={16} className="external-link-icon" />
+                                        {social.icon}
+                                        <span>{social.name}</span>
                                     </a>
                                 ))}
                             </div>
+                        </div>
 
-                            <div className="social-section">
-                                <h3 className="social-title">Follow Me</h3>
-                                <div className="social-links">
-                                    {socialLinks.map((social, index) => (
-                                        <a
-                                            key={index}
-                                            href={social.url}
-                                            className="social-link"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            title={social.name}
-                                            style={{ '--social-color': social.color }}
-                                        >
-                                            {social.icon}
-                                            <span>{social.name}</span>
-                                        </a>
-                                    ))}
+                        <div className="availability-section">
+                            <h3 className="availability-title">Availability</h3>
+                            <div className="availability-info">
+                                <div className="availability-item">
+                                    <div className="status-indicator available"></div>
+                                    <span>Available for collaborations</span>
+                                </div>
+                                <div className="availability-item">
+                                    <div className="status-indicator available"></div>
+                                    <span>Open to research opportunities</span>
+                                </div>
+                                <div className="availability-item">
+                                    <div className="status-indicator limited"></div>
+                                    <span>Limited availability for consulting</span>
                                 </div>
                             </div>
-
-                            <div className="availability-section">
-                                <h3 className="availability-title">Availability</h3>
-                                <div className="availability-info">
-                                    <div className="availability-item">
-                                        <div className="status-indicator available"></div>
-                                        <span>Available for collaborations</span>
-                                    </div>
-                                    <div className="availability-item">
-                                        <div className="status-indicator available"></div>
-                                        <span>Open to research opportunities</span>
-                                    </div>
-                                    <div className="availability-item">
-                                        <div className="status-indicator limited"></div>
-                                        <span>Limited availability for consulting</span>
-                                    </div>
-                                </div>
-                                <p className="response-time">
-                                    <Calendar size={16} />
-                                    Typical response time: 24-48 hours
-                                </p>
-                            </div>
-                        </section>
+                            <p className="response-time">
+                                <Calendar size={16} />
+                                Typical response time: 24-48 hours
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </section>
+
                 <Footer />
             </main>
-        </div>
+        </>
     );
 }
 

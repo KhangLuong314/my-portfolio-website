@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* Research Page Specific Styles */
 .research-hero {
@@ -11,7 +16,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 1rem;
   position: relative;
   overflow: hidden;
 }
