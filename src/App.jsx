@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
 import Home from "./pages/Home.jsx"
 import About from "./pages/About.jsx"
@@ -15,7 +15,6 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/Connect" element={<Connect />} />
           <Route path="/Research" element={<Research />} />
-          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
     </>
