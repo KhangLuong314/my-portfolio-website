@@ -101,7 +101,7 @@ function Connect() {
     };
 
     const submitToBackend = async (data) => {
-        const response = await fetch(`${API_URL}/Contact`, {
+        const response = await fetch(`${API_URL}/contact`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
