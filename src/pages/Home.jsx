@@ -98,9 +98,45 @@ function Home() {
 
                     <nav className="page-nav">
                         {/* In-page navigation for the home page sections */}
-                        <a href="#journey" className="nav-link">Academic Journey</a>
-                        <a href="#expertise" className="nav-link">Expertise</a>
-                        <a href="#achievements" className="nav-link">Achievements</a>
+                        <a
+                            href={`${import.meta.env.BASE_URL}#journey`}
+                            className="nav-link"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                const el = document.getElementById("journey");
+                                if (el) el.scrollIntoView({ behavior: "smooth" });
+                                // Also update URL hash without reload
+                                window.history.pushState(null, "", `${import.meta.env.BASE_URL}#jorney`);
+                            }}
+                            >
+                            Academic Journey
+                        </a>
+                        <a
+                            href={`${import.meta.env.BASE_URL}#expertise`}
+                            className="nav-link"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                const el = document.getElementById("expertise");
+                                if (el) el.scrollIntoView({ behavior: "smooth" });
+                                // Also update URL hash without reload
+                                window.history.pushState(null, "", `${import.meta.env.BASE_URL}#jorney`);
+                            }}
+                            >
+                            Expertise
+                        </a>
+                        <a
+                            href={`${import.meta.env.BASE_URL}#achievements`}
+                            className="nav-link"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                const el = document.getElementById("achievements");
+                                if (el) el.scrollIntoView({ behavior: "smooth" });
+                                // Also update URL hash without reload
+                                window.history.pushState(null, "", `${import.meta.env.BASE_URL}#jorney`);
+                            }}
+                            >
+                            Achievements
+                        </a>
                     </nav>
 
                     <div className="contact-links">
@@ -116,7 +152,7 @@ function Home() {
                             </svg>
                             Connect
                         </NavLink>
-                        <a href="mailto:your-email@example.com" className="social-link"><Mail size={20} /></a>
+                        <a href="mailto:kluong3@huskers.unl.edu" className="social-link"><Mail size={20} /></a>
                         <a href="https://www.linkedin.com/in/khang-luong-776ab8277/" target="_blank" rel="noopener noreferrer" className="social-link"><Linkedin size={20} /></a>
                         <a href="https://github.com/KhangLuong314" target="_blank" rel="noopener noreferrer" className="social-link"><Github size={20} /></a>
                     </div>

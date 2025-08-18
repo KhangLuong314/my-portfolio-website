@@ -26,9 +26,9 @@ function About() {
     ]
 
     const achievements = [
+        { title: "College of Arts and Sciences Dean List", description: "Recognized for academic excellence during the 2024-2025 academic year" },
         { title: "AMC 12 Recognition", description: "Mathematical excellence in national competition" },
         { title: "Americanism Essay Contest", description: "Award for outstanding academic writing" },
-        { title: "STEM Outreach", description: "Active contributor to science education programs" },
         { title: "Academic Excellence", description: "Consistent high performance in physics coursework" }
     ]
 
