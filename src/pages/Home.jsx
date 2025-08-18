@@ -107,7 +107,7 @@ function Home() {
                         <a href=".public/papers/Resume.pdf" target="_blank" rel="noopener noreferrer" className="contact-button">
                             <FileText size={16} /> View Resume
                         </a>
-                        <NavLink to="/Connect" ref="noopener nonreferrer" className="connect">
+                        <NavLink to="/Connect" rel="noopener noreferrer" className="connect">
                             <svg xmlns="http://www.w3.org/2000/svg" 
                                 width="16" height="16" fill="none" stroke="currentColor" 
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 

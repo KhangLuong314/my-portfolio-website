@@ -52,7 +52,7 @@ function About() {
                     <div className="about-content">
                         <div className="profile-section">
                             <div className="profile-image">
-                                <img src="../public/assets/profile-pic.jpeg" alt="Khang Luong"/>
+                                <img src="./public/assets/profile-pic.jpeg" alt="Khang Luong"/>
                             </div>
                             <div className="profile-info">
                                 <h2>About Me</h2>
