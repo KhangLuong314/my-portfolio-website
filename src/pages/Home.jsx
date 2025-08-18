@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Assuming you are using react-router
+import { Link, NavLink } from 'react-router-dom'; // Assuming you are using react-router
 import {
     Zap, Atom, Brain, Calculator, Telescope, Code,
     FileText, Mail, Linkedin, Github, Award, BookOpen, Briefcase,
@@ -9,9 +9,6 @@ import {
 import '../designs/Home.css'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
-// --- NAVBAR COMPONENT ---
-
 
 // --- TIMELINE ITEM COMPONENT ---
 const TimelineItem = ({ item }) => (
@@ -107,10 +104,10 @@ function Home() {
                     </nav>
 
                     <div className="contact-links">
-                        <a href="/papers/Resume.pdf" target="_blank" rel="noopener noreferrer" className="contact-button">
+                        <a href=".public/papers/Resume.pdf" target="_blank" rel="noopener noreferrer" className="contact-button">
                             <FileText size={16} /> View Resume
                         </a>
-                        <a href="/Connect" rel="noopener noreferrer" className="connect">
+                        <NavLink to="/Connect" ref="noopener nonreferrer" className="connect">
                             <svg xmlns="http://www.w3.org/2000/svg" 
                                 width="16" height="16" fill="none" stroke="currentColor" 
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
@@ -118,7 +115,7 @@ function Home() {
                                 <path d="M14 2H6a2 2 0 0 0-2 2v12l4-2 4 2V4a2 2 0 0 0-2-2z"/>
                             </svg>
                             Connect
-                        </a>
+                        </NavLink>
                         <a href="mailto:your-email@example.com" className="social-link"><Mail size={20} /></a>
                         <a href="https://www.linkedin.com/in/khang-luong-776ab8277/" target="_blank" rel="noopener noreferrer" className="social-link"><Linkedin size={20} /></a>
                         <a href="https://github.com/KhangLuong314" target="_blank" rel="noopener noreferrer" className="social-link"><Github size={20} /></a>
