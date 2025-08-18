@@ -53,11 +53,11 @@ function Research() {
       abstract: "This paper challenges the idea of a single beginning to the universe by exploring theories from physics and cosmology that suggest the universe may be infinite, eternal, and part of a larger system beyond the Big Bang.",
       keyFindings: [
         "The Laws of Physics Are Time-Invariant and Suggest a Preexisting Universe",
-        "Hawking’s No-Boundary Proposal Supports a Self-Contained Universe",
+        "Hawking's No-Boundary Proposal Supports a Self-Contained Universe",
         "Thermodynamic and Cosmological Observations Cannot Rule Out an Eternal Universe"
       ],
       doi: "Pending",
-      pdfUrl: "/papers/A_Scientific_Inquiry_to_the_Infinity_of_the_Universe.pdf",
+      pdfUrl: `${import.meta.env.BASE_URL}papers/A_Scientific_Inquiry_to_the_Infinity_of_the_Universe.pdf`,
       journalUrl: "https://journals.aps.org/prl/",
       tags: ["General Relativity", "Quantum Information", "Black Holes"],
       featured: true
@@ -98,7 +98,7 @@ function Research() {
         "Particle collisions could open wormholes or black holes, raising possibilities—and risks—for multiverse access"
       ],
       doi: "In Preparation",
-      pdfUrl: "/papers/Particle_Accelerator__The_Key_to_Time_Travel.pdf",
+      pdfUrl: `${import.meta.env.BASE_URL}papers/Particle_Accelerator__The_Key_to_Time_Travel.pdf`,
       journalUrl: "https://journals.aps.org/prl/",
       tags: ["Special Relativity", "Quantum Physics", "High Energy Physics"],
       featured: false
