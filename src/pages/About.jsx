@@ -5,16 +5,18 @@ import Carousel from '../components/Carousel'
 import "../designs/About.css"
 
 function About() {
+    const base = import.meta.env.BASE_URL;
+
     const imagesUrls = [
-        "/assets/group1.jpg",
-        "/assets/group2.jpeg",
-        "/assets/group3.jpeg",
-        "/assets/group4.jpeg",
-        "/assets/group6.jpg",
-        "/assets/group7.jpg",
-        "/assets/group8.jpeg",
-        "/assets/group9.jpeg"
-    ]
+    "group1.jpg",
+    "group2.jpeg",
+    "group3.jpeg",
+    "group4.jpeg",
+    "group6.jpg",
+    "group7.jpg",
+    "group8.jpeg",
+    "group9.jpeg"
+    ].map(file => `${base}assets/${file}`);
 
     const skills = [
         { category: "Physics & Research", items: ["Quantum Scattering Theory", "Computational Physics", "Data Analysis", "Scientific Writing", "LaTeX"] },
@@ -52,7 +54,7 @@ function About() {
                     <div className="about-content">
                         <div className="profile-section">
                             <div className="profile-image">
-                                <img src="/assets/profile-pic.jpeg" alt="Khang Luong"/>
+                                <img src={`${import.meta.env.BASE_URL}assets/profile-pic.jpeg`} alt="Khang Luong"/>
                             </div>
                             <div className="profile-info">
                                 <h2>About Me</h2>
