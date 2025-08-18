@@ -171,6 +171,8 @@
   transition: all 0.3s ease;
   position: relative;
   backdrop-filter: blur(10px);
+  /* Add overflow hidden to contain child elements */
+  overflow: hidden;
 }
 
 .paper-card.featured {
@@ -255,6 +257,8 @@
   background: rgba(0, 119, 194, 0.05);
   border-radius: 8px;
   border-left: 3px solid var(--accent-blue);
+  /* --- FIX FOR HORIZONTAL OVERFLOW --- */
+  overflow-x: auto; 
 }
 
 .latex-section h4 {
@@ -500,10 +504,11 @@
   font-size: 0.9rem;
 }
 
-/* Mobile Responsive */
+/* --- MOBILE RESPONSIVE UPDATES START HERE --- */
 @media (max-width: 768px) {
   .research-hero {
     padding: 6rem 1rem 4rem;
+    background-size: cover; /* Better background scaling on mobile */
   }
 
   .research-stats {
@@ -526,22 +531,30 @@
   .research-papers, .conferences-section, .collaborations-section {
     padding: 3rem 1rem;
   }
+  
+  /* Make the grid a single column on mobile */
+  .papers-grid {
+    grid-template-columns: 1fr;
+  }
 
   .paper-card {
     padding: 1.5rem;
   }
-
+  
+  /* Stack author and year vertically */
   .paper-meta {
     flex-direction: column;
     align-items: flex-start;
   }
-
+  
+  /* Stack action buttons vertically and stretch them */
   .paper-actions {
     flex-direction: column;
     gap: 1rem;
     align-items: stretch;
   }
 
+  /* Center the action buttons (PDF, Journal, etc.) */
   .action-buttons {
     justify-content: center;
   }
@@ -550,6 +563,7 @@
     grid-template-columns: 1fr;
   }
 }
+/* --- MOBILE RESPONSIVE UPDATES END HERE --- */
 
 @media (max-width: 480px) {
   .hero-title {
