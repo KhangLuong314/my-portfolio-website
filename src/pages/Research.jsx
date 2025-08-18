@@ -110,7 +110,7 @@ function Research() {
       title: "UNL Student Research Day",
       presentation: "Gas-Phase Molecular Dynamics via UED",
       location: "University of Nebraska-Lincoln",
-      date: "April 2025",
+      date: "April 2026",
       type: "Poster Presentation"
     }
   ];
