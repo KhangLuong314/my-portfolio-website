@@ -18,9 +18,9 @@ function Footer() {
             <h4>Quick Links</h4>
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/projects">Projects</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/About">About</Link></li>
+              <li><Link to="/Research">Research</Link></li>
+              <li><Link to="/Connect">Contact</Link></li>
             </ul>
           </div>
           

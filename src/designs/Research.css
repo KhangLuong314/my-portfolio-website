@@ -6,7 +6,7 @@
 
 /* Research Page Specific Styles */
 .research-hero {
-  background-image: url(./public/assets/Engineering.jpg);
+  background-image: url(/assets/Engineering.jpg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;

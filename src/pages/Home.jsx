@@ -104,7 +104,7 @@ function Home() {
                     </nav>
 
                     <div className="contact-links">
-                        <a href=".public/papers/Resume.pdf" target="_blank" rel="noopener noreferrer" className="contact-button">
+                        <a href="/papers/Resume.pdf" target="_blank" rel="noopener noreferrer" className="contact-button">
                             <FileText size={16} /> View Resume
                         </a>
                         <NavLink to="/Connect" rel="noopener noreferrer" className="connect">

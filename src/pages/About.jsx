@@ -6,14 +6,14 @@ import "../designs/About.css"
 
 function About() {
     const imagesUrls = [
-        "./public/assets/group1.jpg",
-        "./public/assets/group2.jpeg",
-        "./public/assets/group3.jpeg",
-        "./public/assets/group4.jpeg",
-        "./public/assets/group6.jpg",
-        "./public/assets/group7.jpg",
-        "./public/assets/group8.jpeg",
-        "./public/assets/group9.jpeg"
+        "/assets/group1.jpg",
+        "/assets/group2.jpeg",
+        "/assets/group3.jpeg",
+        "/assets/group4.jpeg",
+        "/assets/group6.jpg",
+        "/assets/group7.jpg",
+        "/assets/group8.jpeg",
+        "/assets/group9.jpeg"
     ]
 
     const skills = [
@@ -52,7 +52,7 @@ function About() {
                     <div className="about-content">
                         <div className="profile-section">
                             <div className="profile-image">
-                                <img src="./public/assets/profile-pic.jpeg" alt="Khang Luong"/>
+                                <img src="/assets/profile-pic.jpeg" alt="Khang Luong"/>
                             </div>
                             <div className="profile-info">
                                 <h2>About Me</h2>
