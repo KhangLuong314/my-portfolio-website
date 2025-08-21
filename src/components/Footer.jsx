@@ -39,7 +39,7 @@ function Footer() {
           <div className="footer-section">
             <h4>Connect</h4>
             <div className="contact-info">
-              <p><i className="fas fa-envelope"></i> <a href="mailto:lpnk959@gmail.com">lpnk959@gmail.com</a></p>
+              <p><i className="fas fa-envelope"></i> <a href="mailto:khangluong.portfolio@gmail.com">khangluong.portfolio@gmai.com</a></p>
               <p><i className="fas fa-map-marker-alt"></i> Available for remote work</p>
             </div>
             <div className="social-icons">

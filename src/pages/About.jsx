@@ -1,22 +1,12 @@
-import { useState } from 'react'
+import { useState, N } from 'react'
+import { NavLink } from 'react-router-dom';
 import Navbar from "../components/Navbar"
 import Footer from '../components/Footer'
-import Carousel from '../components/Carousel'
 import "../designs/About.css"
 
 function About() {
     const base = import.meta.env.BASE_URL;
-
-    const imagesUrls = [
-    "group1.jpeg",
-    "group2.jpeg",
-    "group3.jpeg",
-    "group4.jpeg",
-    "group6.jpg",
-    "group7.jpg",
-    "group8.jpeg",
-    "group9.jpeg"
-    ].map(file => `${base}assets/${file}`);
+    const heroImageUrl = `${base}assets/research-pic.jpg`;
 
     const skills = [
         { category: "Physics & Research", items: ["Quantum Scattering Theory", "Computational Physics", "Data Analysis", "Scientific Writing", "LaTeX"] },
@@ -38,19 +28,23 @@ function About() {
                 <Navbar />
                 
                 {/* Hero Section */}
-                <section className="hero">
-                    <div className="stuff">
+                <section className="hero" style={{ backgroundImage: `url(${heroImageUrl})` }}>
+                    <div className="hero-overlay"></div>
+                    <div className="hero-content">
                         <h1>Khang Luong</h1>
                         <h2>Physics Student & Undergraduate Research Assistant</h2>
-                        <p className="sub">Exploring the universe through physics, computation, and research.</p>
-                    </div>
-                    <div className="image">
-                        <Carousel images={imagesUrls} interval={4000} />
+                        <p className="hero-subtitle">Exploring the universe through physics, computation, and research.</p>
+                        <div className="hero-cta">
+                            <a href="#about" className="cta-button">Learn More</a>
+                            <NavLink to="/Connect" rel="noopener noreferrer" className="cta-button secondary">
+                            Connect
+                            </NavLink>
+                        </div>
                     </div>
                 </section>
 
                 {/* About Section */}
-                <section className="about-section">
+                <section id="about" className="about-section">
                     <div className="about-content">
                         <div className="profile-section">
                             <div className="profile-image">
@@ -64,7 +58,7 @@ function About() {
                                 
                                 <p>Beyond academics, I'm committed to making science education more inclusive and engaging. I believe that complex scientific principles can be explained in ways that inspire wonder and understanding in people from all backgrounds.</p>
                                 
-                                <div className="contact-info">
+                                <div id="contact" className="contact-info">
                                     <div className="contact-item">
                                         <strong>Location:</strong> Lincoln, Nebraska
                                     </div>

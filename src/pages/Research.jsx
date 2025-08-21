@@ -35,7 +35,6 @@ function Research() {
         "Identified key signatures of non-adiabatic coupling in molecular dynamics"
       ],
       doi: "Pending",
-      pdfUrl: `${import.meta.env.BASE_URL}papers/ucare-proposal.pdf`,
       journalUrl: "https://journals.aps.org/prl/",
       citations: 0,
       tags: ["Ultrafast Dynamics", "Electron Diffraction", "Molecular Physics", "Computational Physics"],

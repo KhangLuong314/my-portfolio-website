@@ -121,14 +121,8 @@ function Connect() {
         {
             icon: <Mail className="contact-icon" />,
             title: "Email",
-            value: "lpnk959@gmail.com",
-            link: "mailto:lpnk959@gmail.com"
-        },
-        {
-            icon: <Phone className="contact-icon" />,
-            title: "Phone",
-            value: "+1 (531) 248-6515",
-            link: "tel:+15312486515"
+            value: "khangluong.portfolio@gmail.com",
+            link: "mailto:khangluong.portfolio@gmail.com"
         },
         {
             icon: <MapPin className="contact-icon" />,

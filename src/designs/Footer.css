@@ -120,6 +120,8 @@ footer::before {
 
 .contact-info {
     margin-bottom: 20px;
+    margin-right: -25px;
+    margin-left: -25px;
 }
 
 .contact-info p {
@@ -232,7 +234,10 @@ footer::before {
     .footer-section ul li a::before {
         display: none;
     }
-    
+    .contact-info {
+        margin-left: 0;
+        margin-right: 0;
+    }
     .contact-info p {
         justify-content: center;
     }
