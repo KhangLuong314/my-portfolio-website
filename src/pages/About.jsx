@@ -8,7 +8,7 @@ function About() {
     const base = import.meta.env.BASE_URL;
 
     const imagesUrls = [
-    "group1.jpg",
+    "group1.jpeg",
     "group2.jpeg",
     "group3.jpeg",
     "group4.jpeg",
@@ -54,7 +54,7 @@ function About() {
                     <div className="about-content">
                         <div className="profile-section">
                             <div className="profile-image">
-                                <img src={`${import.meta.env.BASE_URL}assets/profile-pic.jpeg`} alt="Khang Luong"/>
+                                <img src={`${import.meta.env.BASE_URL}assets/profile-pic.jpg`} alt="Khang Luong"/>
                             </div>
                             <div className="profile-info">
                                 <h2>About Me</h2>

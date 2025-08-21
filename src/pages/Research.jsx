@@ -68,7 +68,7 @@ function Research() {
       authors: ["Khang Luong"],
       journal: "Modern Physics Lab Presentation",
       year: "2025",
-      status: "Published",
+      status: "Locally Published",
       category: "experimental",
       abstract: "This presentation introduces the fundamental physics, properties, and applications of quantum dots, highlighting their nanoscale structure, quantum confinement effects, and role in cutting-edge technologies like displays, bioimaging, and quantum computing.",
       keyFindings: [
