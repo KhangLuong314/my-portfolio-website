@@ -90,7 +90,7 @@ function Home() {
                 {/* Left "Sticky" Column */}
                 <header className="left-panel">
                     <div className="profile-intro">
-                        <h1 className="profile-subtitle">Physics Student & Researcher</h1>
+                        <h className="profile-subtitle" style={{ color: 'whitesmoke', fontSize: '1.5rem'}}>Physics Student & Researcher</h>
                         <p className="profile-bio">
                             A passionate physics enthusiast dedicated to unraveling the mysteries of the cosmos, from the quantum realm to the vast expanse of the universe.
                         </p>

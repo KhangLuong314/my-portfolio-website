@@ -31,7 +31,7 @@ function About() {
                 <section className="hero" style={{ backgroundImage: `url(${heroImageUrl})` }}>
                     <div className="hero-overlay"></div>
                     <div className="hero-content">
-                        <h1>Khang Luong</h1>
+                        <h1 className='myname'>Khang Luong</h1>
                         <h2>Physics Student & Undergraduate Research Assistant</h2>
                         <p className="hero-subtitle">Exploring the universe through physics, computation, and research.</p>
                         <div className="hero-cta">
