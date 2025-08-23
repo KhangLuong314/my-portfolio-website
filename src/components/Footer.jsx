@@ -39,14 +39,13 @@ function Footer() {
           <div className="footer-section">
             <h4>Connect</h4>
             <div className="contact-info">
-              <p><i className="fas fa-envelope"></i> <a href="mailto:khangluong.portfolio@gmail.com">khangluong.portfolio@gmai.com</a></p>
+              <p><i className="fas fa-envelope"></i> <a href="mailto:khangluong.portfolio@gmail.com">khangluong.portfolio@gmail.com</a></p>
               <p><i className="fas fa-map-marker-alt"></i> Available for remote work</p>
             </div>
             <div className="social-icons">
               <a href="https://www.instagram.com/khang_luong_314/" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
               <a href="https://www.linkedin.com/in/khang-luong-776ab8277/" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
               <a href="https://github.com/KhangLuong314" aria-label="GitHub"><i className="fab fa-github"></i></a>
-              <a href="https://twitter.com" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
             </div>
           </div>
         </div>
