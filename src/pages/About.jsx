@@ -9,17 +9,17 @@ function About() {
     const heroImageUrl = `${base}assets/research-pic.jpg`;
 
     const skills = [
-        { category: "Physics & Research", items: ["Quantum Scattering Theory", "Computational Physics", "Data Analysis", "Scientific Writing", "LaTeX"] },
-        { category: "Programming", items: ["Python", "C#", "JavaScript", "React", "HTML/CSS"] },
-        { category: "Mathematics", items: ["Advanced Calculus", "Linear Algebra", "Differential Equations", "Numerical Methods"] },
-        { category: "Laboratory", items: ["Experimental Design", "Instrumentation", "Error Analysis", "Lab Safety"] }
+        { category: "Scientific Computing", items: ["Python (NumPy, SciPy)", "Vectorized Integration", "ODE/PDE Solvers", "FFT Analysis", "LaTeX"] },
+        { category: "Machine Learning", items: ["TensorFlow/Keras", "CNNs", "Monte Carlo Dropout", "Physics-Informed ML", "Scikit-learn"] },
+        { category: "AMO & Quantum Sim", items: ["Quantum Scattering Theory", "IAM & Ionized Form Factors", "UED/GUED", "Exciton Transport", "Cavity QED"] },
+        { category: "Software Engineering", items: ["Git", "Modular Package Design", "REST API (FastAPI)", "React/Vite", "Unit Testing"] }
     ]
 
     const achievements = [
-        { title: "College of Arts and Sciences Dean List", description: "Recognized for academic excellence during the 2024-2025 academic year" },
-        { title: "AMC 12 Recognition", description: "Mathematical excellence in national competition" },
-        { title: "Americanism Essay Contest", description: "Award for outstanding academic writing" },
-        { title: "Academic Excellence", description: "Consistent high performance in physics coursework" }
+        { title: "UCARE Research Fellowship", description: "Awarded competitive funding (<10% acceptance) for computational modeling of ionized molecular diffraction." },
+        { title: "40x Simulation Optimization", desc: "Engineered vectorized numerical integration pipelines, reducing scattering turnaround from hours to minutes." },
+        { title: "Scientific ML Deployment", description: "Developed and deployed a full-stack inference pipeline for 13,000-image diffraction datasets." },
+        { title: "Dean's List (GPA: 3.97)", description: "Consistent academic excellence in Physics, Mathematics, and Computer Science." }
     ]
 
     return (
@@ -32,10 +32,10 @@ function About() {
                     <div className="hero-overlay"></div>
                     <div className="hero-content">
                         <h1 className='myname'>Khang Luong</h1>
-                        <h2>Physics Student & Undergraduate Research Assistant</h2>
-                        <p className="hero-subtitle">Exploring the universe through physics, computation, and research.</p>
+                        <h2>Computational AMO Physicist</h2>
+                        <p className="hero-subtitle">Engineering high-performance simulation frameworks and physics-informed ML for ultrafast science.</p>
                         <div className="hero-cta">
-                            <a href="#about" className="cta-button">Learn More</a>
+                            <a href="#about" className="cta-button">Research Profile</a>
                             <NavLink to="/Connect" rel="noopener noreferrer" className="cta-button secondary">
                             Connect
                             </NavLink>
@@ -51,22 +51,22 @@ function About() {
                                 <img src={`${import.meta.env.BASE_URL}assets/profile-pic.jpg`} alt="Khang Luong"/>
                             </div>
                             <div className="profile-info">
-                                <h2>About Me</h2>
-                                <p>I'm an undergraduate Physics student at the University of Nebraska-Lincoln with a passion for quantum mechanics and science communication. Originally from Vietnam, I moved to the United States in 2022 to pursue rigorous academic opportunities and contribute to the scientific community.</p>
+                                <h2>Professional Profile</h2>
+                                <p>I am a Computational Physicist specializing in quantum scattering theory and ultrafast molecular dynamics. My work is focused on bridging the gap between theoretical modeling and experimental data acquisition at world-class facilities like SLAC MeV-UED and Los Alamos LANSCE.</p>
                                 
-                                <p>My journey in physics is driven by a fundamental curiosity about the nature of reality. From wave-particle duality to quantum entanglement, I find myself constantly amazed by the elegant mathematics that describe our universe. This fascination led me to not only study these concepts but also share them with others through accessible science communication.</p>
+                                <p>Through my research at the University of Nebraska-Lincoln and Brandeis University, I have engineered simulation frameworks that reproduce femtosecond-pulse diffraction patterns with high precision. I specialize in optimizing scientific codebases, recently achieving a 40x speedup in molecular diffraction simulations through vectorized numerical integration and modular architecting.</p>
                                 
-                                <p>Beyond academics, I'm committed to making science education more inclusive and engaging. I believe that complex scientific principles can be explained in ways that inspire wonder and understanding in people from all backgrounds.</p>
+                                <p>I am particularly passionate about the application of Physics-Informed Machine Learning (PIML) to structure retrieval. By integrating Monte Carlo dropout for uncertainty estimation in CNNs, I develop robust tools for diffraction pattern recognition and anomaly detection in high-throughput AMO experiments.</p>
                                 
                                 <div id="contact" className="contact-info">
                                     <div className="contact-item">
-                                        <strong>Location:</strong> Lincoln, Nebraska
+                                        <strong>Focus:</strong> Computational AMO Physics
                                     </div>
                                     <div className="contact-item">
-                                        <strong>University:</strong> University of Nebraska-Lincoln
+                                        <strong>Institution:</strong> University of Nebraska-Lincoln
                                     </div>
                                     <div className="contact-item">
-                                        <strong>Major:</strong> Physics (Quantum Mechanics Focus)
+                                        <strong>Expertise:</strong> Scientific Computing & Scientific ML
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@ function About() {
 
                 {/* Skills Section */}
                 <section className="skills-section">
-                    <h2>Skills & Expertise</h2>
+                    <h2>Technical Skills & Expertise</h2>
                     <div className="skills-grid">
                         {skills.map((skillCategory, index) => (
                             <div key={index} className="skill-category">
@@ -93,12 +93,12 @@ function About() {
 
                 {/* Experience & Achievements */}
                 <section className="achievements-section">
-                    <h2>Achievements & Recognition</h2>
+                    <h2>Measurable Impact</h2>
                     <div className="achievements-grid">
                         {achievements.map((achievement, index) => (
                             <div key={index} className="achievement-card">
                                 <h3>{achievement.title}</h3>
-                                <p>{achievement.description}</p>
+                                <p>{achievement.description || achievement.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -106,24 +106,24 @@ function About() {
 
                 {/* Research Interests */}
                 <section className="research-section">
-                    <h2>Research Interests</h2>
+                    <h2>Core Research Areas</h2>
                     <div className="research-content">
                         <div className="research-grid">
                             <div className="research-card">
-                                <h3>Quantum Mechanics</h3>
-                                <p>Investigating fundamental quantum phenomena, wave-particle duality, and quantum entanglement with applications in quantum computing and information theory.</p>
+                                <h3>Ultrafast Molecular Dynamics</h3>
+                                <p>Simulating ionized gas-phase molecular dynamics with sub-100fs resolution to capture coherent nuclear motion and non-adiabatic coupling.</p>
                             </div>
                             <div className="research-card">
-                                <h3>Particle Physics</h3>
-                                <p>Exploring particle accelerator research and the fundamental building blocks of matter, with aspirations to contribute to experimental high-energy physics.</p>
+                                <h3>Scientific Machine Learning</h3>
+                                <p>Applying CNNs and PIML architectures to automate structure retrieval and real-time data analysis for high-repetition-rate laser facilities.</p>
                             </div>
                             <div className="research-card">
-                                <h3>Computational Physics</h3>
-                                <p>Developing numerical methods and simulations to model complex physical systems and solve theoretical problems in quantum mechanics.</p>
+                                <h3>Quantum Scattering Theory</h3>
+                                <p>Developing advanced Independent Atom Models (IAM) to account for multiply ionized species in strong-field ionization experiments.</p>
                             </div>
                             <div className="research-card">
-                                <h3>AMO Physics</h3>
-                                <p>Atomic, molecular, and optic physics. Create simulatations for scientific experiments and perform data analysis.</p>
+                                <h3>Electronic Structure Modeling</h3>
+                                <p>Optimizing energy-transport simulations across molecular aggregates and excitonic polaritons for QED and photovoltaic applications.</p>
                             </div>
                         </div>
                     </div>
@@ -131,15 +131,15 @@ function About() {
 
                 {/* Goals & Vision */}
                 <section className="vision-section">
-                    <h2>Future Goals</h2>
+                    <h2>Strategic Goals</h2>
                     <div className="vision-content">
                         <div className="vision-text">
-                            <p>My long-term goal is to pursue a Ph.D. in quantum physics and contribute meaningfully to both research and education. I'm particularly interested in particle accelerator research and the development of new experimental techniques that could advance our understanding of fundamental physics.</p>
+                            <p>My objective is to contribute to the next generation of time-resolved science by developing software and theoretical models that can handle the massive data volumes produced by modern XFEL and UED facilities. I aim to pursue a Ph.D. that integrates high-energy physics with advanced computational methods.</p>
                             
-                            <p>I envision a future where scientific knowledge is not confined to academic circles but is actively shared and celebrated in the broader community. Through continued research, teaching, and science communication, I hope to inspire the next generation of physicists and contribute to solving some of the most profound questions about our universe.</p>
+                            <p>I am dedicated to building reproducible, high-performance scientific software that empowers researchers to translate raw diffraction data into intuitive structural dynamics. By leveraging my background in both physics and computer science, I provide the cross-disciplinary expertise required for the future of computational AMO physics.</p>
                             
                             <blockquote>
-                                "The beauty of physics lies not just in its equations, but in its power to reveal the elegant simplicity underlying the apparent complexity of our world."
+                                "The goal of computational physics is not just to simulate reality, but to provide the precision required to discover the laws that govern it."
                             </blockquote>
                         </div>
                     </div>

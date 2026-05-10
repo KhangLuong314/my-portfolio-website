@@ -44,42 +44,42 @@ function Home() {
     // --- DATA ---
     const timelineData = [
         {
+            year: "Summer 2025",
+            title: "Computational Research Intern — Molecular Excitons",
+            institution: "Shao Lab, Brandeis University",
+            description: "Optimized Python-based electronic-structure code for molecular excitons. Benchmarked accuracy-cost tradeoffs in physics- and ML-based multiscale methods for energy-transport simulations across molecular aggregates.",
+            skills: ["Python", "Electronic Structure", "ML-based Multiscale Methods", "Cavity QED"]
+        },
+        {
             year: "Fall 2024 - Present",
-            title: "University of Nebraska-Lincoln",
-            institution: "B.S. in Physics — Minors: Mathematics and Computer Science",
-            description: "Focused on Quantum Mechanics, Relativity, and Theoretical Physics. Currently conducting research in Atomic, Molecular, and Optical (AMO) Physics with the applications of Computer Science.",
-            skills: ["Quantum Mechanics", "Computational Physics", "Research Methods", "Experimental Physics"]
+            title: "Undergraduate Research Assistant",
+            institution: "Centurion Group, University of Nebraska-Lincoln",
+            description: "Engineered a Python simulation framework for ultrafast electron scattering. Developed a modular scattering-analysis codebase that reduced experiment-to-simulation turnaround from hours to under 5 minutes, achieving a 40x speedup via vectorized numerical integration.",
+            skills: ["Python", "Quantum Scattering Theory", "NumPy/SciPy", "Ultrafast Electron Diffraction"]
         },
         {
-            year: "Summer 2024",
-            title: "Quantum Mechanics & Computer Science Integration",
-            institution: "Self-Directed Learning",
-            description: "Learning in programming language and quantum mechanics through university-level lectures and projects.",
-            skills: ["Python", "HTML/CSS", "C#", "Quantum Mechanics", "Numerical Methods"]
-        },
-        {
-            year: "2022 - 2024",
-            title: "Pius X High School",
-            institution: "High School Diploma",
-            description: "Graduated as distinguish scholar, demonstrating exceptional performance in mathematics and sciences. AP Courses: AP Calculus (AB & BC) and AP Physics (Mechanics and E&M).",
-            skills: ["Classical Mechanics", "Electromagnetism", "Calculus", "Leadership"]
+            year: "2024 - Present",
+            title: "B.S. in Physics",
+            institution: "University of Nebraska-Lincoln",
+            description: "GPA: 3.97/4.00. Minors in Mathematics and Computer Science. Focused on Quantum Mechanics and Computational Physics with direct application to AMO research at SLAC and Los Alamos facilities.",
+            skills: ["Quantum Mechanics", "Differential Equations", "Scientific Computing", "Data Structures"]
         },
     ];
 
     const physicsFields = [
-        { icon: <Atom size={20} />, title: "Quantum Mechanics" },
-        { icon: <Zap size={20} />, title: "Electrodynamics" },
-        { icon: <Telescope size={20} />, title: "Cosmology" },
-        { icon: <Brain size={20} />, title: "General Relativity" },
+        { icon: <Atom size={20} />, title: "Quantum Scattering" },
+        { icon: <Zap size={20} />, title: "Ultrafast Dynamics" },
+        { icon: <Brain size={20} />, title: "Physics-Informed ML" },
+        { icon: <Code size={20} />, title: "Scientific Computing" },
         { icon: <Calculator size={20} />, title: "Mathematical Physics" },
-        { icon: <BookOpen size={20} />, title: "Classical Mechanics" }
+        { icon: <Telescope size={20} />, title: "Molecular Diffraction" }
     ];
 
     const achievements = [
-        { icon: "🏆", title: "UCARE Research Fellowship", desc: "Awarded undergraduate research funding for the 2025-2026 academic year." },
-        { icon: "📚", title: "Dean's List — College of Arts and Sciences", desc: "Recognized for academic excellence during the 2024-2025 academic year." },
-        { icon: "🎯", title: "American Mathematics Competition", desc: "Placed 4th in the national-level mathematics competition." },
-        { icon: "🔬", title: "Undergraduate Research Assistant", desc: "Collaborating with faculty on advanced research in physics and computation." },
+        { icon: "🏆", title: "UCARE Research Fellowship", desc: "Awarded competitive research funding (<10% acceptance) for ionized molecular diffraction modeling." },
+        { icon: "⚡", title: "40x Simulation Speedup", desc: "Optimized scattering factor integration using vectorized NumPy broadcasting for real-time analysis." },
+        { icon: "🤖", title: "Scientific ML Deployment", desc: "Developed a CNN for 13,000-image diffraction datasets with Monte Carlo dropout uncertainty estimation." },
+        { icon: "📚", title: "Dean's List (GPA ≥ 3.75)", desc: "Consistently recognized for academic excellence in upper-level physics and mathematics." },
     ];
 
     // --- RENDER ---
@@ -90,9 +90,9 @@ function Home() {
                 {/* Left "Sticky" Column */}
                 <header className="left-panel">
                     <div className="profile-intro">
-                        <h className="profile-subtitle" style={{ color: 'whitesmoke', fontSize: '1.5rem'}}>Physics Student & Researcher</h>
+                        <h className="profile-subtitle" style={{ color: 'whitesmoke', fontSize: '1.5rem'}}>Computational AMO Physicist</h>
                         <p className="profile-bio">
-                            A passionate physics enthusiast dedicated to unraveling the mysteries of the cosmos, from the quantum realm to the vast expanse of the universe.
+                            Specializing in quantum scattering theory and ultrafast molecular dynamics. Engineered high-performance simulation frameworks for SLAC and LANSCE-relevant research, leveraging physics-informed machine learning for structure retrieval.
                         </p>
                     </div>
 

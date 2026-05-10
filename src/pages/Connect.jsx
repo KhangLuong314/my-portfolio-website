@@ -121,8 +121,8 @@ function Connect() {
         {
             icon: <Mail className="contact-icon" />,
             title: "Email",
-            value: "khangluong.portfolio@gmail.com",
-            link: "mailto:khangluong.portfolio@gmail.com"
+            value: "kluong3@huskers.unl.edu",
+            link: "mailto:kluong3@huskers.unl.edu"
         },
         {
             icon: <MapPin className="contact-icon" />,
@@ -145,18 +145,6 @@ function Connect() {
             name: "LinkedIn",
             url: "https://www.linkedin.com/in/khang-luong-776ab8277/",
             color: "#0077b5"
-        },
-        {
-            icon: <Instagram className="social-icon" />,
-            name: "Instagram",
-            url: "https://www.instagram.com/khang_luong_314/",
-            color: "#e4405f"
-        },
-        {
-            icon: <Twitter className="social-icon" />,
-            name: "Twitter",
-            url: "https://twitter.com",
-            color: "#1da1f2"
         }
     ];
 
@@ -167,25 +155,25 @@ function Connect() {
                 <Navbar />
                 {/* Page Title */}
                 <section className="connect-hero">
-                    <h1 className="connect-title">Let's Connect</h1>
+                    <h1 className="connect-title">Professional Connection</h1>
                     <p className="connect-subtitle">
-                        Have a question, collaboration idea, or just want to chat about physics? 
-                        I'd love to hear from you!
+                        Interested in discussing AMO research, computational modeling, or physics-informed machine learning? 
+                        I am open to collaborations and research opportunities in national labs and academia.
                     </p>
                 </section>
 
                 <section className="connect-content">
                     {/* Contact Form */}
                     <div className="contact-form-section">
-                        <h2 className="section-title">Send Me a Message</h2>
+                        <h2 className="section-title">Inquiry Form</h2>
                         
                         {/* Status Messages */}
                         {submitStatus === 'success' && (
                             <div className="status-message success">
                                 <div className="status-icon">✓</div>
                                 <div>
-                                    <h3>Message Sent Successfully!</h3>
-                                    <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
+                                    <h3>Inquiry Submitted Successfully</h3>
+                                    <p>Thank you for reaching out. I will respond to your research or professional inquiry promptly.</p>
                                 </div>
                             </div>
                         )}
@@ -194,8 +182,8 @@ function Connect() {
                             <div className="status-message error">
                                 <div className="status-icon">✗</div>
                                 <div>
-                                    <h3>Something went wrong</h3>
-                                    <p>Please try again or contact me directly via email.</p>
+                                    <h3>Submission Error</h3>
+                                    <p>Please try again or contact me directly via my university email.</p>
                                 </div>
                             </div>
                         )}
@@ -214,7 +202,7 @@ function Connect() {
                                         value={formData.name}
                                         onChange={handleInputChange}
                                         className={`form-input ${errors.name ? 'error' : ''}`}
-                                        placeholder="Enter your full name"
+                                        placeholder="Enter your name"
                                         disabled={isSubmitting}
                                     />
                                     {errors.name && <span className="error-message">{errors.name}</span>}
@@ -223,7 +211,7 @@ function Connect() {
                                 <div className="form-group">
                                     <label htmlFor="email" className="form-label">
                                         <Mail size={18} />
-                                        Email Address *
+                                        Professional Email *
                                     </label>
                                     <input
                                         type="email"
@@ -232,7 +220,7 @@ function Connect() {
                                         value={formData.email}
                                         onChange={handleInputChange}
                                         className={`form-input ${errors.email ? 'error' : ''}`}
-                                        placeholder="Enter your email address"
+                                        placeholder="email@institution.edu"
                                         disabled={isSubmitting}
                                     />
                                     {errors.email && <span className="error-message">{errors.email}</span>}
@@ -251,7 +239,7 @@ function Connect() {
                                     value={formData.subject}
                                     onChange={handleInputChange}
                                     className={`form-input ${errors.subject ? 'error' : ''}`}
-                                    placeholder="What would you like to discuss?"
+                                    placeholder="Research Collaboration / PhD Inquiry / Technical Question"
                                     disabled={isSubmitting}
                                 />
                                 {errors.subject && <span className="error-message">{errors.subject}</span>}
@@ -261,7 +249,7 @@ function Connect() {
                                 <div className="form-group">
                                     <label htmlFor="preferredContact" className="form-label">
                                         <Phone size={18} />
-                                        Preferred Contact Method
+                                        Preferred Method
                                     </label>
                                     <select
                                         id="preferredContact"
@@ -272,7 +260,6 @@ function Connect() {
                                         disabled={isSubmitting}
                                     >
                                         <option value="email">Email</option>
-                                        <option value="phone">Phone</option>
                                         <option value="linkedin">LinkedIn</option>
                                     </select>
                                 </div>
@@ -280,7 +267,7 @@ function Connect() {
                                 <div className="form-group">
                                     <label htmlFor="urgency" className="form-label">
                                         <Calendar size={18} />
-                                        Priority Level
+                                        Inquiry Type
                                     </label>
                                     <select
                                         id="urgency"
@@ -290,9 +277,9 @@ function Connect() {
                                         className="form-input"
                                         disabled={isSubmitting}
                                     >
-                                        <option value="low">Low - General inquiry</option>
-                                        <option value="normal">Normal - Regular response</option>
-                                        <option value="high">High - Urgent matter</option>
+                                        <option value="normal">Research Inquiry</option>
+                                        <option value="high">Urgent Technical Matter</option>
+                                        <option value="low">General Networking</option>
                                     </select>
                                 </div>
                             </div>
@@ -308,14 +295,11 @@ function Connect() {
                                     value={formData.message}
                                     onChange={handleInputChange}
                                     className={`form-textarea ${errors.message ? 'error' : ''}`}
-                                    placeholder="Tell me about your project, question, or how I can help you..."
+                                    placeholder="Briefly describe your research focus or inquiry..."
                                     rows="6"
                                     disabled={isSubmitting}
                                 />
                                 {errors.message && <span className="error-message">{errors.message}</span>}
-                                <div className="character-count">
-                                    {formData.message.length} characters
-                                </div>
                             </div>
 
                             <button
@@ -331,7 +315,7 @@ function Connect() {
                                 ) : (
                                     <>
                                         <Send size={18} />
-                                        Send Message
+                                        Send Professional Inquiry
                                     </>
                                 )}
                             </button>
@@ -340,7 +324,7 @@ function Connect() {
 
                     {/* Contact Information */}
                     <div className="contact-info-section">
-                        <h2 className="section-title">Get in Touch</h2>
+                        <h2 className="section-title">Direct Channels</h2>
                         
                         <div className="contact-methods">
                             {contactInfo.map((contact, index) => (
@@ -362,7 +346,7 @@ function Connect() {
                         </div>
 
                         <div className="social-section">
-                            <h3 className="social-title">Follow Me</h3>
+                            <h3 className="social-title">Academic & Professional Networks</h3>
                             <div className="social-links">
                                 {socialLinks.map((social, index) => (
                                     <a
@@ -386,20 +370,16 @@ function Connect() {
                             <div className="availability-info">
                                 <div className="availability-item">
                                     <div className="status-indicator available"></div>
-                                    <span>Available for collaborations</span>
+                                    <span>Open for SLAC/LANSCE Collaborations</span>
                                 </div>
                                 <div className="availability-item">
                                     <div className="status-indicator available"></div>
-                                    <span>Open to research opportunities</span>
-                                </div>
-                                <div className="availability-item">
-                                    <div className="status-indicator limited"></div>
-                                    <span>Limited availability for consulting</span>
+                                    <span>Seeking 2026 PhD/Research Roles</span>
                                 </div>
                             </div>
                             <p className="response-time">
                                 <Calendar size={16} />
-                                Typical response time: 24-48 hours
+                                Professional response within 24 hours
                             </p>
                         </div>
                     </div>

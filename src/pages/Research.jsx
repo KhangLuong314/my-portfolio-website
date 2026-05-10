@@ -28,41 +28,81 @@ function Research() {
       year: "2024-2025",
       status: "In Preparation",
       category: "computational",
-      abstract: "We present a comprehensive study of ultrafast electron diffraction (UED) applied to ionized gas-phase molecular dynamics. Our simulations reveal novel insights into the structural dynamics of molecular systems under femtosecond laser excitation.",
+      abstract: "Engineering a high-performance Python simulation framework for ultrafast electron scattering, reproducing femtosecond-pulse diffraction patterns with residuals consistent with experimental measurement uncertainty.",
       keyFindings: [
-        "Developed advanced simulation models for electron diffraction in gases",
-        "Observed coherent nuclear motion with sub-100fs resolution",
-        "Identified key signatures of non-adiabatic coupling in molecular dynamics"
+        "Achieved a 40x speedup via vectorized numerical integration over loop-based prototypes",
+        "Engineered a modular scattering-analysis codebase reducing turnaround from hours to under 5 minutes",
+        "Directly enabled structural retrieval of transient molecular geometries for SLAC MeV-UED projects"
       ],
       doi: "Pending",
       journalUrl: "https://journals.aps.org/prl/",
       citations: 0,
-      tags: ["Ultrafast Dynamics", "Electron Diffraction", "Molecular Physics", "Computational Physics"],
+      tags: ["Ultrafast Dynamics", "Electron Diffraction", "Scientific Computing", "NumPy/SciPy"],
       latex: "I_{mol}(s)=\\sum_{i=1}^{N} \\sum_{i=1, j \\neq i}^{N}|f_{i}(s)||f_{j}(s)|cos(\\eta_{i}(s) - \\eta_{j}(s))exp\\left(-\\frac{1}{2}l_{ij}^{2}s^{2}\\right)\\frac{sin(sr_{ij})}{sr_{ij}}",
       featured: true
     },
     {
       id: 2,
-      title: "A Scientific Inquiry into the Infinity of the Universe",
+      title: "Physics-Informed CNN for Scientific Image Classification",
       authors: ["Khang Luong"],
-      journal: "Pius X High School",
-      year: "2024",
-      status: "No Publication",
-      category: "high school",
-      abstract: "This paper challenges the idea of a single beginning to the universe by exploring theories from physics and cosmology that suggest the universe may be infinite, eternal, and part of a larger system beyond the Big Bang.",
+      journal: "Scientific ML Hackathon",
+      year: "2025",
+      status: "Accomplished",
+      category: "computational",
+      abstract: "Developed a convolutional neural network for automated diffraction pattern recognition, demonstrating robustness in anomaly detection for high-throughput AMO experiments.",
       keyFindings: [
-        "The Laws of Physics Are Time-Invariant and Suggest a Preexisting Universe",
-        "Hawking's No-Boundary Proposal Supports a Self-Contained Universe",
-        "Thermodynamic and Cosmological Observations Cannot Rule Out an Eternal Universe"
+        "Trained on a 13,000-image dataset with multi-class classification and uncertainty estimation",
+        "Implemented Monte Carlo dropout for robust uncertainty quantification in research-critical tasks",
+        "Deployed full-stack inference pipeline (FastAPI/React) for real-time data acquisition support"
       ],
-      doi: "Pending",
-      pdfUrl: `${import.meta.env.BASE_URL}papers/A_Scientific_Inquiry_to_the_Infinity_of_the_Universe.pdf`,
-      journalUrl: "https://journals.aps.org/prl/",
-      tags: ["General Relativity", "Quantum Information", "Black Holes"],
+      doi: "N/A",
+      pdfUrl: null,
+      githubUrl: "https://github.com/KhangLuong314/bananas-visualization",
+      tags: ["Scientific ML", "TensorFlow", "Computer Vision", "Uncertainty Estimation"],
       featured: true
     },
     {
       id: 3,
+      title: "Molecular Excitons & Multiscale Simulation Optimization",
+      authors: ["Khang Luong", "Dr. Yihan Shao"],
+      journal: "Shao Lab, Brandeis University",
+      year: "2025",
+      status: "In Progress",
+      category: "theoretical",
+      abstract: "Benchmarking and optimizing Python-based electronic-structure code for molecular excitons and energy-transport simulations across molecular aggregates.",
+      keyFindings: [
+        "Stress-tested exciton dynamics code for next-generation photovoltaic and cavity QED applications",
+        "Systematically probed accuracy-cost tradeoffs in physics- and ML-based multiscale methods",
+        "Established maintainable simulation workflow documentation and reproducible research tutorials"
+      ],
+      doi: "Pending",
+      pdfUrl: null,
+      journalUrl: "https://shaogroup.org/",
+      tags: ["Electronic Structure", "Exciton Transport", "Multiscale Modeling", "Cavity QED"],
+      featured: true
+    },
+    {
+      id: 4,
+      title: "A Scientific Inquiry into the Infinity of the Universe",
+      authors: ["Khang Luong"],
+      journal: "Theoretical Cosmology Review",
+      year: "2024",
+      status: "High School Thesis",
+      category: "high school",
+      abstract: "Explores theories from physics and cosmology suggesting the universe may be infinite and eternal, examining the time-invariance of physical laws and Hawking's No-Boundary Proposal.",
+      keyFindings: [
+        "Synthesized cosmological observations to challenge single-beginning models",
+        "Analyzed thermodynamic implications for an eternal universe model",
+        "Evaluated the role of quantum information in black hole singularity theories"
+      ],
+      doi: "Pending",
+      pdfUrl: `${import.meta.env.BASE_URL}papers/A_Scientific_Inquiry_to_the_Infinity_of_the_Universe.pdf`,
+      journalUrl: "https://journals.aps.org/prl/",
+      tags: ["General Relativity", "Cosmology", "Theoretical Physics"],
+      featured: false
+    },
+    {
+      id: 5,
       title: "Quantum Dots and Particle in a Box Presentation",
       authors: ["Khang Luong"],
       journal: "Modern Physics Lab Presentation",
@@ -71,7 +111,7 @@ function Research() {
       category: "experimental",
       abstract: "This presentation introduces the fundamental physics, properties, and applications of quantum dots, highlighting their nanoscale structure, quantum confinement effects, and role in cutting-edge technologies like displays, bioimaging, and quantum computing.",
       keyFindings: [
-        "Quantum confinement leads to tunable optical properties ",
+        "Quantum confinement leads to tunable optical properties",
         "Quantum dots exhibit discrete energy levels like atoms",
         "Quantum dots have diverse, high-impact applications"
       ],
@@ -83,7 +123,7 @@ function Research() {
       featured: true
     },
     {
-      id: 4,
+      id: 6,
       title: "Particle Accelerator: The Key to Time Travel",
       authors: ["Khang Luong"],
       journal: "Pius X High School",
@@ -110,7 +150,14 @@ function Research() {
       presentation: "Gas-Phase Molecular Dynamics via UED",
       location: "University of Nebraska-Lincoln",
       date: "April 2026",
-      type: "Poster Presentation"
+      type: "Accomplished — Poster Presentation"
+    },
+    {
+      title: "Nebraska Academy of Sciences Conference",
+      presentation: "Computational Modeling of Ionized Molecular Diffraction",
+      location: "Lincoln, Nebraska",
+      date: "August 2025",
+      type: "Accomplished — Presentation"
     }
   ];
 
@@ -274,13 +321,19 @@ function Research() {
                         PDF
                       </a>
                     )}
+                    {paper.githubUrl && (
+                      <a href={paper.githubUrl} target="_blank" rel="noopener noreferrer" className="action-btn secondary">
+                        <ExternalLink size={16} />
+                        GitHub
+                      </a>
+                    )}
                     {paper.journalUrl && paper.status === 'Published' && (
                       <a href={paper.journalUrl} target="_blank" rel="noopener noreferrer" className="action-btn secondary">
                         <ExternalLink size={16} />
                         Journal
                       </a>
                     )}
-                    {paper.doi !== 'Pending' && paper.doi !== 'In Preparation' && (
+                    {paper.doi && paper.doi !== 'Pending' && paper.doi !== 'In Preparation' && paper.doi !== 'N/A' && (
                       <a href={`https://doi.org/${paper.doi}`} target="_blank" rel="noopener noreferrer" className="action-btn secondary">
                         <LinkIcon size={16} />
                         DOI
